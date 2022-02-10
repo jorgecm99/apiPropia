@@ -7,7 +7,7 @@ import DataProvider from './Componentes/Context/Context';
 import Section from './Componentes/Section/Section';
 
 const BodyStyle = styled('body')({
-  background: 'blue'
+  background: 'lightblue'
 })
 
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { DataContext} from '../Context/Context'
+import { DataContext} from '../Context/Context';
+import { Link } from 'react-router-dom';
+import '../Styles/teamdetails.css'
 
 class Teamsdetails extends Component {
     static contextType = DataContext;
@@ -24,11 +26,13 @@ class Teamsdetails extends Component {
 
     render() {
         const {team} = this.state;
+        const {addCart} = this.context;
         return (
             <>
                 {
                     team.map(item =>(
-                        <div className="details" key={item.teamID}>
+                        <section>
+                            <div className="details" key={item.teamID}>
                             <img src={item.logo} alt={item.teamName} />
                             <div className="box">
                                 <div className="row">
@@ -36,9 +40,16 @@ class Teamsdetails extends Component {
                                 </div>
                                 <p>{item.city}</p>
                                 <p>{item.conference}</p>
+                                <span>{item.homeVenue.name}</span>
                                 
                             </div>
                         </div>
+                        <Link to="/cart" className="cart" onClick={() => addCart(item.teamID)}>
+                                Add to cart
+                        </Link>
+
+                        </section>
+                        
                     ))
                 }
             </>

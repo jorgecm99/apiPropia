@@ -1,3 +1,47 @@
-.headerstyle {
-    background-color: yellow;
+header{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    background: steelblue;
+}
+
+header nav{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 0 15px;
+}
+nav ul li a:hover{
+    color: lightseagreen;
+}
+
+nav .cart-style{
+    cursor: pointer;
+    position: relative;
+}
+nav .cart-style span{
+    position: absolute;
+    top:-12px;
+    right: -7px;
+    background: crimson;
+    font-size: 10px;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+header .menu,
+header .close{
+    cursor: pointer;
+    display: none;
 }

@@ -30,7 +30,7 @@ class Header extends Component {
                 <ul className={toggle ? "toggle" : ""}>
                     <li><Link to="/" style={{textDecoration: "none"}}>Home</Link></li>
                     <li><Link to="/teams" style={{textDecoration: "none"}}>Teams</Link></li>
-                    <li><Link to="/tickets" style={{textDecoration: "none"}}>Tickets</Link></li>
+                    <li><Link to="/login" style={{textDecoration: "none"}}>Login</Link></li>
                     <li className="close" onClick={this.menuToggle}>
                             <img src={faMinus} alt="" width="20"/>
                         </li>

@@ -13,7 +13,7 @@ class Cart extends Component {
     render() {
         const { cart, reduction, aumentar, removeTeam, total } = this.context;
         if(cart.length === 0){
-            return <h2 style={{textAlign:'center'}}>No Products to purchase</h2>
+            return <h2 style={{textAlign:'center'}}>No tickets to purchase</h2>
         } else {
             return (
                 <>

@@ -7,6 +7,8 @@ import { faBars} from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { DataContext } from '../Context/Context';
 
+var LogoNfl = require('../../Assets/nfl-league-logo.png')
+
 class Header extends Component {
     static contextType = DataContext;
 
@@ -25,6 +27,12 @@ class Header extends Component {
             <header className='headerstyle'>
                 <div className="menu" onClick={this.menuToggle}>
                     <img src={faBars} alt="" width="20"/>
+                </div>
+                <div className='image-container'>
+                    <Link to="http://www.nfl.com" style={{textDecoration: "none"}}>
+                    <img src={LogoNfl} alt=''></img>
+                    </Link>
+                    
                 </div>
                 <nav>
                 <ul className={toggle ? "toggle" : ""}>

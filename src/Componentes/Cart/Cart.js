@@ -21,13 +21,13 @@ class Cart extends Component {
                         cart.map(item =>(
                             <section>
                                 <div className="details" key={item.teamID}>
-                                <img src={item.logo} alt={item.teamName} />
+                                <img src={item.homeVenue.stadiumImage} alt={item.teamName} />
                                 <div className="box">
                                     <div className="row">
                                         <h2>{item.teamName}</h2>
                                     </div>
                                     <p>{item.city}</p>
-                                    <span>{item.price * item.count}</span>
+                                    <span>${item.price * item.count}</span>
                                     
                                 </div>
                             </div>

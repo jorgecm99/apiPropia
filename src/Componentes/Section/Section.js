@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Teamslist from './Teamslist';
 import Teamsdetails from './Teamsdetails';
 import Home from '../../Componentes/Home/Home';
-import Form from '../Formulario/Form';
 import { Route } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Payment from '../Payment/Payment';
+import Form from '../Formulario/Form';
 
 class Section extends Component {
     render() {

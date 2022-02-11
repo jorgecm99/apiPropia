@@ -1,0 +1,15 @@
+.home-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.text-container{
+    max-width: 600px;
+}
+.image-container{
+    width: 200px;
+}
+img{
+    width: 100%;
+}

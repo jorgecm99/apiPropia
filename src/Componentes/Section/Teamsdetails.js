@@ -33,7 +33,7 @@ class Teamsdetails extends Component {
                     team.map(item =>(
                         <section>
                             <div className="details" key={item.teamID}>
-                            <img src={item.logo} alt={item.teamName} />
+                            <img src={item.homeVenue.stadiumImage} alt={item.teamName} />
                             <div className="box">
                                 <div className="row">
                                     <h2>{item.teamName}</h2>

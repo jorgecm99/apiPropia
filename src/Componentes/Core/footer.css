@@ -1,0 +1,21 @@
+.main-footer{
+    background-color: rgb(49, 27, 27);
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.main-footer ul {
+    padding-left: 0;
+}
+.main-footer ul li{
+    list-style: none;
+    padding: 5px;
+}
+.main-item{
+    font-weight: bold;
+    margin-bottom: 12px;
+}

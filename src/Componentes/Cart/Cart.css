@@ -2,7 +2,11 @@ section .cart{
     position: relative;
     border: 1px solid #ccc;
 }
-
+.cantidad{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
 .cantidad span{
     color: crimson;
     padding: 0 20px;
@@ -20,9 +24,6 @@ section .cart{
 }
 
 .eliminar{
-    position: absolute;
-    top:0;
-    right: 5px;
     color: crimson;
     cursor: pointer;
     font-weight: 900;
@@ -48,4 +49,12 @@ section .cart{
 .total h3{
     margin-right: 50px;
     color: crimson;
+}
+
+
+.details {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    margin: 50px 0;
 }

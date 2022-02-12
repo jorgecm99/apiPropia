@@ -19,27 +19,30 @@ class Cart extends Component {
                 <>
                     {
                         cart.map(item =>(
-                            <section>
-                                <div className="details" key={item.teamID}>
+                            
+                            <div className="details" key={item.teamID}>
                                 <img src={item.homeVenue.stadiumImage} alt={item.teamName} />
                                 <div className="box">
                                     <div className="row">
                                         <h2>{item.teamName}</h2>
                                     </div>
                                     <p>{item.city}</p>
-                                    <span>${item.price * item.count}</span>
+                                    <span>Price: ${item.price * item.count}</span>
+
+                                    <div className='cantidad'>
+                                    <button className='count' onClick={()=> aumentar(item.teamID)}>+</button>
+                                    <span>{item.count}</span>
+                                   <button className='count' onClick={()=> reduction(item.teamID)}>-</button>
+                                </div>
                                     
                                 </div>
+                            
+                                
+                                <div className='eliminar' onClick={()=>removeTeam(item.teamID) }>X</div>
                             </div>
-                            <div className='cantidad'>
-                                <button className='count' onClick={()=> aumentar(item.teamID)}>+</button>
-                                <span>{item.count}</span>
-                                <button className='count' onClick={()=> reduction(item.teamID)}>-</button>
-                            </div>
-                            <div className='eliminar' onClick={()=>removeTeam(item.teamID) }>X</div>
     
     
-                            </section>
+                            
                             
                         ))
                     }

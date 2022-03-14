@@ -4,8 +4,9 @@ import styled from '@emotion/styled';
 import Header from './Componentes/Core/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import DataProvider from './Componentes/Context/Context';
-import Section from './Componentes/Section/Section';
 import Footer from './Componentes/Core/Footer';
+
+import Routes from './routes';
 
 const BodyStyle = styled('body')({
   background: 'lightblue'
@@ -13,18 +14,18 @@ const BodyStyle = styled('body')({
 
 
 function App() {
-  
+
   return (
     <DataProvider>
       <Router>
       <BodyStyle>
         <Header/>
-        <Section/>
+        <Routes/>
         <Footer/>
       </BodyStyle>
     </Router>
-    </DataProvider>  
-   
+    </DataProvider>
+
   );
 }
 

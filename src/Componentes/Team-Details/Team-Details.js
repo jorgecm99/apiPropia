@@ -3,7 +3,7 @@ import { DataContext} from '../Context/Context';
 import { Link } from 'react-router-dom';
 import '../Styles/teamdetails.css'
 
-class Teamsdetails extends Component {
+class TeamDetails extends Component {
     static contextType = DataContext;
     state = {
         team: []
@@ -41,7 +41,7 @@ class Teamsdetails extends Component {
                                 <p>{item.city}</p>
                                 <p>{item.conference}</p>
                                 <span>{item.homeVenue.name}</span>
-                                
+
                             </div>
                         </div>
                         <Link to="/cart" className="cart" onClick={() => addCart(item.teamID)}>
@@ -49,7 +49,7 @@ class Teamsdetails extends Component {
                         </Link>
 
                         </section>
-                        
+
                     ))
                 }
             </>
@@ -57,4 +57,4 @@ class Teamsdetails extends Component {
     }
 }
 
-export default Teamsdetails;
+export default TeamDetails;

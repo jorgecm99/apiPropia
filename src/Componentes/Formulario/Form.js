@@ -2,46 +2,48 @@ import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import '../Styles/form.css'
 
-function Form () {
-    const adminUser = {
-        email: "jcorcoles86@gmail.com",
-        password: "corcolotes86"
-    }
-    const [nombre, setNombre] = useState({user:"", email:""});
-    const [error, setError] = useState("");
-    
-    const loginUser = details => {
-        
-        if(details.email === adminUser.email && details.password === adminUser.password){
-            console.log("logged in");
-            setNombre({
-                user: details.user,
-                email: details.email
-            });
-        } else {
-            console.log("did not match");
-            setError("Details did not match")
-        }
-    }       
-      
+// this, obviously, won't be here, but I guess you use it as a simple validation,
+// so I've extracted it outside the function, so that it doesn't get instantiated
+// in every render. It doesn't make any sense, as they won't change.
+const VALID_ADMIN_CREDENTIALS = {
+    email: "example@email.com",
+    password: "password"
+}
 
-    const logoutUser = () => {
-        setNombre({user:"", email:""});
+function Form () {
+    const [user, setUser] = useState({username:"", email:""});
+    const [error, setError] = useState("");
+
+    const handleLogin = (credentials) => {
+        if(credentials.email === VALID_ADMIN_CREDENTIALS.email && credentials.password === VALID_ADMIN_CREDENTIALS.password) {
+            console.log("logged in");
+            setError('');
+            setUser(credentials);
+            return;
+        }
+
+        console.log("did not match");
+        setError("Details did not match")
     }
-      
+
+
+    const handleLogout = () => {
+        setUser({username:"", email:""});
+    }
+
     return (
         <div className='login-form'>
-            {(nombre.email !== "") ? (
+            {(user.email !== "") ? (
                 <div className='welcome'>
-                    <h2>Welcome, <span>{nombre.user}</span></h2>
-                    <button onClick={logoutUser}>Logout</button>
+                    <h2>Welcome, <span>{user.username}</span></h2>
+                    <button onClick={handleLogout}>Logout</button>
                 </div>
             ) : (
-                <LoginForm Login={loginUser} error={error} />
+                <LoginForm Login={handleLogin} error={error} />
 
             )}
         </div>
     );
-};
+}
 
 export default Form;

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { DataContext} from '../Context/Context';
 import '../Styles/teamlist.css'
 
-export class Teamslist extends Component {
+export class TeamsList extends Component {
     static contextType = DataContext;
     render() {
         const {teams} = this.context;
         return (
-            
+
             <div id="team">
                 {
                     teams.map(team =>(
@@ -23,12 +23,12 @@ export class Teamslist extends Component {
                                         <p>Capacity: {team.capacity}</p>
                                         <button onClick={()=>this.context.addCart(team.teamID)}>Comprar Tickets</button>
                                     </div>
-                                        
+
                                 </div>
 
-                                
+
                         </section>
-                        
+
 
                     ))
                 }
@@ -37,4 +37,4 @@ export class Teamslist extends Component {
     }
 }
 
-export default Teamslist;
+export default TeamsList;
